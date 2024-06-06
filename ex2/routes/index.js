@@ -29,7 +29,7 @@ router.get('/authors/:id', function (req, res) {
     let author = req.params.id;
     let livros = response.data;
     let livrosAutor = livros.filter(livro => livro.author && livro.author.includes(author));
-    res.render('autor', { autor: author, lista: livrosAutor });
+    res.render('autor', { autor: author, lista: livrosAutor});
   }).catch((error) => {
     res.render('error', { error: error });
   });
