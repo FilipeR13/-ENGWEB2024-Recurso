@@ -17,7 +17,13 @@ block content
                               td
                                   a(href='/' + slist._id) #{slist._id}
                               td= slist.title
-                              td= slist.author
+                              td
+                                if slist.author && Array.isArray(slist.author)
+                                    each author in slist.author
+                                        a(href="/authors/" + author)= author
+                                        | &nbsp;
+                                else
+                                    | N/A
                               td= slist.publishDate
                               td= slist.pages
       footer.w3-container.w3-blue 
