@@ -15,8 +15,8 @@ PUT /books/:id
 */
 
 router.get('/books', function(req, res) {
-    if (req.query.character) {
-        Livros.listarPorNomedePersonagem(req.query.character)
+    if (req.query.charater) {
+        Livros.listarPorNomedePersonagem(req.query.charater)
             .then(dados => res.jsonp(dados))
             .catch(erro => res.status(500).jsonp(erro))
     } else if (req.query.genre) {
@@ -30,20 +30,20 @@ router.get('/books', function(req, res) {
     } 
 });
 
-router.get('/books/:id', function(req, res) {
-    Livros.getLivro(req.params.id)
-        .then(dados => res.jsonp(dados))
-        .catch(erro => res.status(500).jsonp(erro))
-});
-
 router.get('/books/genres', function(req, res) {
     Livros.listarGeneros()
-        .then(dados => res.jsonp(dados))
-        .catch(erro => res.status(500).jsonp(erro))
+    .then(dados => res.jsonp(dados))
+    .catch(erro => res.status(500).jsonp(erro))
 });
-
+    
 router.get('/books/characters', function(req, res) {
     Livros.listarPersonagens()
+    .then(dados => res.jsonp(dados))
+    .catch(erro => res.status(500).jsonp(erro))
+    });
+        
+router.get('/books/:id', function(req, res) {
+    Livros.getLivro(req.params.id)
         .then(dados => res.jsonp(dados))
         .catch(erro => res.status(500).jsonp(erro))
 });
