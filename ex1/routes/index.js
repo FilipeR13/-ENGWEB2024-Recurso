@@ -2,18 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Livros = require('../controllers/livros')
 
-/*
-GET /books: 
-GET /books/:id
-GET /books?charater=EEEE
-GET /books?genre=AAA
-GET /books/genres
-GET /books/characters
-POST /books
-DELETE /books/:id
-PUT /books/:id
-*/
-
 router.get('/books', function(req, res) {
     if (req.query.charater) {
         Livros.listarPorNomedePersonagem(req.query.charater)

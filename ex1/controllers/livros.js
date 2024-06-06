@@ -9,16 +9,14 @@ module.exports.listar = () => {
 }
 
 module.exports.getLivro = (id) => {
-    return Livros
-        .findOne({_id: id})
-        .exec();
+    return Livros.findById(id).exec()
 }
 
 // devolve a lista dos livros em que EEEE faz parte do nome de um dos personagens;
 
 module.exports.listarPorNomedePersonagem = (personagem) => {
     return Livros
-        .find({characters: personagem})
+        .find({ characters: { $regex: personagem, $options: 'i' } })
         .exec();
 }
 // lista dos livros associados ao género (genre) AAA
