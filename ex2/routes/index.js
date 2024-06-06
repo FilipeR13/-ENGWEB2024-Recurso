@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var axios = require('axios');
 
-const api_url = 'http://localhost:17000';
+const api_url = 'http://backend:17000';
 /* GET home page. */
 router.get('/', function(req, res, next) {
   axios.get(api_url + '/books')

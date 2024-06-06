@@ -17,16 +17,6 @@ O resultado é guardado em "dataset-novo.json".
 
 Como dito em cima, o "bookId" é transformado em "_id" e é escolhido o "_id" do livros para a query.
 
-# Rodar o teste.
-
-É possível correr o comando:
-
-```bash
-docker compose up --build
-```
-
-Para colocar APENAS o mongo db num docker.
-
 ## Correr o ex1
 
 Para correr o ex1
@@ -43,4 +33,12 @@ Para correr o ex2
 ```bash
 npm install
 npm start
+```
+
+# Docker
+
+É possivel correr ambos os exercicios com o docker:
+
+```bash
+docker-compose up --build
 ```
